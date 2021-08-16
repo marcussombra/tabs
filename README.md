@@ -1,0 +1,3 @@
+- No email que recebi, não tinha o link do repositório, então hospedei no Github;
+- Criei um projeto em branco com as especificações;
+- Foi criado um service para consumo da API (services/pedidos.service.ts).
