@@ -1,0 +1,128 @@
+.body {
+	background-color: #efefef;
+	height: 100%;
+	padding: 16px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px;
+	margin-bottom: 23px;
+
+	.comprador {
+		display: flex;
+		flex-direction: column;
+
+		.tipo {
+			color: #a7a7aa;
+			font-size: 0.8rem;
+		}
+
+		.comprador {
+			color: #414146;
+			font-size: 1rem;
+			font-weight: bold;
+			text-align: left;
+			margin-top: 5px;
+		}
+	}
+
+	ion-toggle {
+		--background: #525257;
+		--background-checked: #525257;
+
+		--handle-background: #ffffff;
+		--handle-background-checked: #37c258;
+	}
+}
+
+.pedido {
+	margin: 8px;
+	margin-bottom: 12px;
+	padding-left: 11px;
+	padding-right: 21px;
+	background-color: #fff;
+	border-radius: 4px;
+	display: flex;
+
+	.dados {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding-top: 23px;
+		padding-bottom: 45px;
+		width: CALC(100% - 119px);
+		text-align: left;
+
+		span {
+			width: 100%;
+		}
+
+		.n_pedido {
+			color: #414146;
+			font-size: 1rem;
+			font-weight: bold;
+			text-align: left;
+		}
+
+		.status {
+			font-size: 0.8rem;
+			font-weight: bold;
+			margin-top: 6px;
+		}
+	}
+
+	.actions {
+		width: 119px;
+		flex-direction: column;
+		display: flex;
+		text-align: center;
+		height: 100%;
+
+		button {
+			height: 30px;
+			background-color: #37c258;
+			font-size: 13px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			margin:auto;
+			margin-top: 38px;
+			width: 100%;
+		}
+		span {
+			color: #4b4b50;
+			font-size: 10px;
+			font-weight: bold;
+			width: 100%;
+			text-align: center;
+			margin-top: 5px;
+		}
+	}
+}
+
+
+.pedido.confirmado {
+	border-left: 14px solid #37c258;	
+
+	.status {
+		color: #37c258;
+	}
+}
+
+.pedido.delivery {
+	border-left: 14px solid #3d1260;
+		
+	.status {
+		color: #3d1260;
+	}
+}
+
+.pedido.retirada {
+	border-left: 14px solid #f0ba3a;
+		
+	.status {
+		color: #f0ba3a;
+	}
+}

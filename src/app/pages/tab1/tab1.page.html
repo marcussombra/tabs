@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista de pedidos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="body">
+    <div class="header">
+      <div class="comprador">
+        <span class="tipo">SuperComprador</span>
+        <span class="comprador">Francisco Neto</span>
+      </div>
+      <ion-toggle></ion-toggle>
+    </div>
+
+    <div [@inOutAnimation] [class]="'pedido ' + pedido.statusClass" *ngFor="let pedido of (pedidos | async)">
+      <div class="dados">
+        <span class="n_pedido">Pedido #{{ pedido.id }}</span>
+        <span class="status">{{ pedido.statusText }}</span>
+      </div>
+      <div class="actions">
+        <button (click)="setEntrega(pedido.id)"  *ngIf="interval[pedido.id]">Zerar</button>
+        <button (click)="setEntrega(pedido.id)"  *ngIf="!interval[pedido.id]">Iniciar</button>
+        <span *ngIf="tempo[pedido.id]">Entrega em {{ tempo[pedido.id] | date: 'mm:ss' }}</span>
+        <span *ngIf="!tempo[pedido.id]">Entrega em 00:00</span>
+      </div>
+    </div>
+  </div>
+</ion-content>
